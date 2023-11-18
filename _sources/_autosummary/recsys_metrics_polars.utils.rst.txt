@@ -1,0 +1,29 @@
+recsys\_metrics\_polars.utils
+=============================
+
+.. automodule:: recsys_metrics_polars.utils
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      join_true_recs_and_preprocess
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

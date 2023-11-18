@@ -1,0 +1,29 @@
+recsys\_metrics\_polars.data\_info
+==================================
+
+.. automodule:: recsys_metrics_polars.data_info
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DataInfo
+   
+   
+
+   
+   
+   
+
+
+

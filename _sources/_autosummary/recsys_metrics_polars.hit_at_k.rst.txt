@@ -1,0 +1,29 @@
+recsys\_metrics\_polars.hit\_at\_k
+==================================
+
+.. automodule:: recsys_metrics_polars.hit_at_k
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      compute_hit_at_k
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

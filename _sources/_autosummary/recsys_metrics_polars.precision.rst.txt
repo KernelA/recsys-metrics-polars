@@ -1,0 +1,29 @@
+recsys\_metrics\_polars.precision
+=================================
+
+.. automodule:: recsys_metrics_polars.precision
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      PrecisionAtK
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,30 @@
+recsys\_metrics\_polars.base
+============================
+
+.. automodule:: recsys_metrics_polars.base
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BaseMetricAtK
+      BaseRecMetric
+   
+   
+
+   
+   
+   
+
+
+

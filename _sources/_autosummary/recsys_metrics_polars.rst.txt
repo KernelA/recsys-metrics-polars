@@ -1,0 +1,38 @@
+﻿recsys\_metrics\_polars
+=======================
+
+.. automodule:: recsys_metrics_polars
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   recsys_metrics_polars.avg_precision
+   recsys_metrics_polars.base
+   recsys_metrics_polars.constants
+   recsys_metrics_polars.data_info
+   recsys_metrics_polars.hit_at_k
+   recsys_metrics_polars.precision
+   recsys_metrics_polars.recall
+   recsys_metrics_polars.utils
+

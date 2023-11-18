@@ -1,0 +1,29 @@
+recsys\_metrics\_polars.recall
+==============================
+
+.. automodule:: recsys_metrics_polars.recall
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      RecallAtK
+   
+   
+
+   
+   
+   
+
+
+

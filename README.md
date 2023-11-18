@@ -45,3 +45,11 @@ poetry install --only main,dev,doc --no-root
 ```
 pytest ./tests
 ```
+
+## Doc building
+
+Install XeTeX
+
+```
+sphinx-build -n -b html ./docs/source/ ./docs/build/
+```

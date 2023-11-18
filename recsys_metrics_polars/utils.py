@@ -9,11 +9,10 @@ def join_true_recs_and_preprocess(
     recommendations: pl.DataFrame,
     data_info: DataInfo,
 ) -> pl.DataFrame:
-    """Join two tables and compute ranks based on :py:attr:
+    """Join two tables and compute ranks based on :py:attr:`.DataInfo.score_col`
 
-    :param true_interactions: _description_
-    :param recommendations: _description_
-    :return: _description_
+    :param true_interactions:
+    :param recommendations:
     """
     data = true_interactions.lazy().join(
         recommendations.lazy().with_columns(

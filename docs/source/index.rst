@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to recsys_metrics_polars's documentation!
-==============================================
+=================================================
    .. :template: custom-module-template.rst
 
 .. toctree::

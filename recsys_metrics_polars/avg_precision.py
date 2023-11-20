@@ -10,7 +10,7 @@ class AvgPrecisionAtK(BaseMetricAtK):
     AP@k
 
     .. math::
-        & AP@k = \\dfrac{\\sum\\limits_{i=1}^{k} Precision@i \\cdot Rel(i)}{\\min(k, \\text{Total relevean items})}, \\\\
+        & AP@k = \\dfrac{\\sum\\limits_{i=1}^{k} Precision@i \\cdot Rel(i)}{\\min(k, \\text{Total relevant items})}, \\\\
         & Rel(i) = \\begin{cases}
             1, \\text{item with rank } i \\text{ is relevant,} \\\\
             0, \\text{otherwise}

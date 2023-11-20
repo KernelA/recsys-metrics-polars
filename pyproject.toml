@@ -11,6 +11,7 @@ packages = [
 ]
 
 [tool.poetry.urls]
+"Documentation" = "https://kernela.github.io/recsys-metrics-polars/"
 "Bug Tracker" = "https://github.com/KernelA/recsys-metrics-polars/issues"
 
 

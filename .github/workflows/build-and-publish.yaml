@@ -19,6 +19,13 @@ on:
       paths-ignore:
         - 'README.md'
 
+    workflow_dispatch: 
+      inputs:
+        force_doc_update:  
+          description: "Force doc redeploy"
+          required: false
+          type: boolean 
+
 env:
   PYTHON_VERSION: "3.9"
   POETRY_VERSION: "1.7.0"
@@ -82,7 +89,7 @@ jobs:
           run: sphinx-build -W -n -b html ./docs/source/ ./docs/build/
           
         - uses: actions/upload-artifact@master
-          if: ${{ github.event_name == 'push' && github.ref_name == env.RELEASE_BRANCH }}
+          if: ${{ github.ref_name == env.RELEASE_BRANCH && (github.event_name == 'push' || inputs.force_doc_update)  }}
           with:
               name: html-doc
               path: ./docs/build/
@@ -126,7 +133,7 @@ jobs:
 
         - name: Downloading doc
           uses: actions/download-artifact@master
-          if: ${{ steps.release.outputs.released == 'true' }}
+          if: ${{ steps.release.outputs.released == 'true' || inputs.force_doc_update }}
           with:
             name: html-doc
             path: ./docs/build/
@@ -138,7 +145,7 @@ jobs:
         
         - name: Deploy doc
           uses: peaceiris/actions-gh-pages@v3
-          if: ${{ steps.release.outputs.released == 'true' }}
+          if: ${{ steps.release.outputs.released == 'true' || inputs.force_doc_update }}
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./docs/build/

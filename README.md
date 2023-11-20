@@ -32,7 +32,7 @@ poetry install --only main --no-root
 
 For development:
 ```
-poetry install --only main,dev --no-root
+poetry install --only main,dev,test --no-root
 ```
 
 For docs:

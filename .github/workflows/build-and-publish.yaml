@@ -53,7 +53,7 @@ jobs:
             - name: Install dependencies
               run: |
                 poetry self add poetry-version-plugin  
-                poetry install --no-interaction --only main,dev
+                poetry install --no-interaction --only main,test
 
             - name: Run tests
               working-directory: ${{ runner.temp }}
@@ -72,11 +72,11 @@ jobs:
           uses: actions/cache@v3
           with:
               path: ~/.cache/pypoetry
-              key: venv-${{ runner.os }}
+              key: doc-${{ runner.os }}
 
         - name: Install dependencies
           run: |
-            poetry install --no-interaction --only doc
+            poetry install --no-interaction --only doc,main --no-root
         
         - name: Build doc
           run: sphinx-build -W -n -b html ./docs/source/ ./docs/build/

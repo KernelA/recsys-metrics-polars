@@ -17,6 +17,12 @@ def setup(app):
     app.connect("autodoc-process-docstring", autodoc_process_docstring)
 
 
+def format_type_hints(annotation, config):
+    if annotation.__module__ == "polars.dataframe.frame" and annotation.__name__ == "DataFrame":
+        return ":external+polars:doc:`reference/dataframe/index`"
+    return None
+
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -44,6 +50,7 @@ extensions = [
 templates_path = ["_templates"]
 exclude_patterns = ["_build"]
 
+typehints_formatter = format_type_hints
 autosummary_generate = True
 autoclass_content = "both"
 autodoc_typehints = "both"

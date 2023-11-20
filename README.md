@@ -5,12 +5,12 @@
 Python library for computing some metrics for recomendations systems based on [polars](https://www.pola.rs/)
 
 Available metrics:
-* Precision at k
-* Recall at k
-* Average precision at k
-* Mean average precision
+* [Precision at k](https://kernela.github.io/recsys-metrics-polars/_autosummary/recsys_metrics_polars.precision.html)
+* [Recall at k](https://kernela.github.io/recsys-metrics-polars/_autosummary/recsys_metrics_polars.recall.html)
+* [Average precision at k](https://kernela.github.io/recsys-metrics-polars/_autosummary/recsys_metrics_polars.avg_precision.html)
+* [Mean average precision](https://kernela.github.io/recsys-metrics-polars/_autosummary/recsys_metrics_polars.avg_precision.html#recsys_metrics_polars.avg_precision.AvgPrecisionAtK.avergae_over_queries)
 
-[Documentation](https://kernela.github.io/recsys-metrics-polars/_autosummary/recsys_metrics_polars.data_info.html#module-recsys_metrics_polars.data_info)
+[Documentation](https://kernela.github.io/recsys-metrics-polars/index.html)
 
 ## PyPI
 
@@ -32,7 +32,7 @@ poetry install --only main --no-root
 
 For development:
 ```
-poetry install --only main,dev --no-root
+poetry install --only main,dev,test --no-root
 ```
 
 For docs:

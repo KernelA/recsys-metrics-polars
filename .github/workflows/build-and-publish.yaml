@@ -30,11 +30,6 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - name: Install xetex # TODO: cache latex
-              run: |
-                sudo apt update
-                sudo apt install -y texlive-xetex texlive-fonts-recommended texlive-latex-recommended
-
             - name: Set up Python
               uses: actions/setup-python@v4
               with:
@@ -58,25 +53,44 @@ jobs:
             - name: Install dependencies
               run: |
                 poetry self add poetry-version-plugin  
-                poetry install --no-interaction --only main,dev,doc
+                poetry install --no-interaction --only main,dev
 
             - name: Run tests
               working-directory: ${{ runner.temp }}
               run: |
                 pytest ${{ github.workspace}}/tests
 
-            - name: Build doc
-              run: sphinx-build -n -b html ./docs/source/ ./docs/build/
-            
-            - uses: actions/upload-artifact@master
-              if: ${{ github.event_name == 'push' && github.ref_name == env.RELEASE_BRANCH }}
-              with:
-                  name: html-doc
-                  path: ./docs/build/
+    build-doc:
+      runs-on: "ubuntu-latest"
+      container: kernela/recsys-metrics-polars-doc-maker:latest  
+
+      steps:
+        - uses: actions/checkout@v3
+
+        - name: Load cache
+          id: cached-poetry-dependencies
+          uses: actions/cache@v3
+          with:
+              path: ~/.cache/pypoetry
+              key: venv-${{ runner.os }}
+
+        - name: Install dependencies
+          run: |
+            poetry install --no-interaction --only doc
+        
+        - name: Build doc
+          run: sphinx-build -W -n -b html ./docs/source/ ./docs/build/
+          
+        - uses: actions/upload-artifact@master
+          if: ${{ github.event_name == 'push' && github.ref_name == env.RELEASE_BRANCH }}
+          with:
+              name: html-doc
+              path: ./docs/build/
+
 
     release:
         runs-on: "ubuntu-latest"    
-        needs: build
+        needs: ["build", "build-doc"]
         if: ${{ github.ref_name == 'master' }}
 
         steps:
